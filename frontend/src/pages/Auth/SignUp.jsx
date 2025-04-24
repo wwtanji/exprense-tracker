@@ -7,7 +7,7 @@ import { API_PATHS } from "../../utils/apiPaths";
 import uploadImage from "../../utils/uploadImage";
 import { UserContext } from "../../context/UserContext";
 import axiosInstance from "../../utils/axiosInstance";
-import AuthLayout from "../../components/AuthLayout";
+import AuthLayout from "../../components/layouts/AuthLayout";
 
 
 const SignUpForm = () => {

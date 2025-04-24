@@ -5,7 +5,7 @@ import { validateEmail } from "../../utils/helper";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import { UserContext } from "../../context/UserContext";
-import AuthLayout from "../../components/AuthLayout";
+import AuthLayout from "../../components/layouts/AuthLayout";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
