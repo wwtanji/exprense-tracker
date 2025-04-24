@@ -1,12 +1,16 @@
-import React, { useState} from 'react'
-import AuthLayout from '../../components/AuthLayout';
-import { Link } from 'react-router-dom';
-import Input from '../../components/Inputs/Input';
-import ProfilePhotoSelector from '../../components/Inputs/ProfilePhotoSelector.jsx';
-import { validateEmail } from '../../utils/helper.js';
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Input from "../../components/Inputs/Input";
+import { validateEmail } from "../../utils/helper";
+import ProfilePhotoSelector from "../../components/Inputs/ProfilePhotoSelector";
+import { API_PATHS } from "../../utils/apiPaths";
+import uploadImage from "../../utils/uploadImage";
+import { UserContext } from "../../context/UserContext";
+import axiosInstance from "../../utils/axiosInstance";
+import AuthLayout from "../../components/AuthLayout";
 
-const SignUp = () => {
 
+const SignUpForm = () => {
   const [profilePic, setProfilePic] = useState(null);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,8 +18,8 @@ const SignUp = () => {
 
   const [error, setError] = useState(null);
 
-
-  // validation for sign up 
+  const { updateUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -39,10 +43,36 @@ const SignUp = () => {
 
     setError("");
 
-    // future api call
+    // SignUp API Call
+    try {
+      if (profilePic) {
+        const imgUploadRes = await uploadImage(profilePic);
+        profileImageUrl = imgUploadRes.imageUrl || "";
+      }
 
-};
-  
+      const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
+        fullName,
+        email,
+        password,
+        profileImageUrl,
+      });
+
+      const { token, user } = response.data;
+
+      if (token) {
+        localStorage.setItem("token", token);
+        updateUser(user);
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        setError(error.response.data.message);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    }
+  };
+
   return (
     <AuthLayout>
       <div className="lg:w-[100%] h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center">
@@ -97,7 +127,7 @@ const SignUp = () => {
         </form>
       </div>
     </AuthLayout>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUpForm;

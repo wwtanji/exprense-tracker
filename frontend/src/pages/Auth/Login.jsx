@@ -1,19 +1,21 @@
-import React, { useState } from 'react';
-import AuthLayout from '../../components/AuthLayout';
-import { Link, useNavigate } from 'react-router-dom';
-import Input from '../../components/Inputs/Input';
-import { validateEmail } from '../../utils/helper';
+import React, { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import Input from "../../components/Inputs/Input";
+import { validateEmail } from "../../utils/helper";
+import axiosInstance from "../../utils/axiosInstance";
+import { API_PATHS } from "../../utils/apiPaths";
+import { UserContext } from "../../context/UserContext";
+import AuthLayout from "../../components/AuthLayout";
 
-const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const LoginForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
 
+  const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
 
-
-  // validation for login
-
+  // Handle Login Form Submit
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -29,9 +31,27 @@ const Login = () => {
 
     setError("");
 
+    //Login API Call
+    try {
+      const response = await axiosInstance.post(API_PATHS.AUTH.LOGIN, {
+        email,
+        password,
+      });
+      const { token, user } = response.data;
 
-    // future login API call
-  }
+      if (token) {
+        localStorage.setItem("token", token);
+        updateUser(user);
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      if (error.response && error.response.data.message) {
+        setError(error.response.data.message);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    }
+  };
 
   return (
     <AuthLayout>
@@ -54,13 +74,15 @@ const Login = () => {
             value={password}
             onChange={({ target }) => setPassword(target.value)}
             label="Password"
-            placeholder="Min 8 characters"
+            placeholder="Min 8 Characters"
             type="password"
           />
 
-          {error && <p className="text-red-500 text-sm my-2">{error}</p>}
+          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
 
-          <button type="submit" className="btn-primary">Login</button>
+          <button type="submit" className="btn-primary">
+            LOGIN
+          </button>
 
           <p className="text-[13px] text-slate-800 mt-3">
             Don’t have an account?{" "}
@@ -68,10 +90,10 @@ const Login = () => {
               SignUp
             </Link>
           </p>
-        </form> 
+        </form>
       </div>
     </AuthLayout>
   );
 };
 
-export default Login;
+export default LoginForm;
