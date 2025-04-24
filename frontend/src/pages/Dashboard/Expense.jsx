@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import DashboardLayout from "../../components/layouts/DashboardLayout";
 
-import { useNavigate } from "react-router-dom";
 import { useUserAuth } from "../../hooks/useUserAuth";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
-import IncomeOverview from "../../components/Expense/ExpenseOverview";
 import ExpenseList from "../../components/Expense/ExpenseList";
 import ExpenseOverview from "../../components/Expense/ExpenseOverview";
 import AddExpenseForm from "../../components/Expense/AddExpenseForm";
@@ -15,8 +13,6 @@ import toast from "react-hot-toast";
 
 const Expense = () => {
   useUserAuth();
-
-  const navigate = useNavigate();
 
   const [expenseData, setExpenseData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -85,7 +81,6 @@ const Expense = () => {
     }
   };
 
-  // Delete Expense
   const deleteExpense = async (id) => {
     try {
       await axiosInstance.delete(API_PATHS.EXPENSE.DELETE_EXPENSE(id));
