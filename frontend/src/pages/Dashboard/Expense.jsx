@@ -85,6 +85,7 @@ const Expense = () => {
     }
   };
 
+  // Delete Expense
   const deleteExpense = async (id) => {
     try {
       await axiosInstance.delete(API_PATHS.EXPENSE.DELETE_EXPENSE(id));
@@ -99,6 +100,15 @@ const Expense = () => {
       );
     }
   };
+
+  const handleDownloadExpenseDetails = async () => {
+    try {
+      const response = await axiosInstance.get(
+        API_PATHS.EXPENSE.DOWNLOAD_EXPENSE,
+        {
+          responseType: "blob", 
+        }
+      );
   };
 
   useEffect(() => {
