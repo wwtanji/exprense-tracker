@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import axiosInstance from "../../utils/axiosInstance";
 import { API_PATHS } from "../../utils/apiPaths";
 import { addThousandsSeparator } from "../../utils/helper";
-
+import InfoCard from "../../components/cards/InfoCard";
 
 const Home = () => {
   useUserAuth();
