@@ -1,6 +1,6 @@
 import React from "react";
 
-import CARD_2 from "../../assets/images/card2.png";
+import CARD_2 from "../../assets/images/card2.png"
 import { LuTrendingUpDown } from "react-icons/lu";
 
 const AuthLayout = ({ children }) => {
@@ -11,23 +11,23 @@ const AuthLayout = ({ children }) => {
         {children}
       </div>
 
-      <div className="hidden md:block w-[40vw] h-screen bg-violet-50 bg-auth-bg-img bg-cover bg-no-repeat bg-center overflow-hidden p-8 relative">
+      <div className="hidden md:block w-[40vw] h-screen bg-purple-100 bg-auth-bg-img bg-cover bg-no-repeat bg-center overflow-hidden p-8 relative">
         <div className="w-48 h-48 rounded-[40px] bg-purple-600 absolute -top-7 -left-5" />
-        <div className="w-48 h-56 rounded-[40px] border-[20px] border-fuchsia-600 absolute top-[30%] -right-10" />
-        <div className="w-48 h-48 rounded-[40px] bg-violet-500 absolute -bottom-7 -left-5" />
+        <div className="w-48 h-56 rounded-[40px] border-[20px] border-purple-400 absolute top-[30%] -right-10" />
+        <div className="w-48 h-48 rounded-[40px] bg-purple-500 absolute -bottom-7 -left-5" />
 
         <div className="grid grid-cols-1 z-20">
           <StatsInfoCard
             icon={<LuTrendingUpDown />}
             label="Track Your Income & Expenses"
             value="430,000"
-            color="bg-primary"
+            color="bg-purple-500"
           />
         </div>
 
         <img
           src={CARD_2}
-          className="w-64 lg:w-[90%] absolute bottom-10 shadow-lg shadow-blue-400/15"
+          className="w-64 lg:w-[90%] absolute bottom-10 shadow-lg shadow-purple-400/15"
         />
       </div>
     </div>
