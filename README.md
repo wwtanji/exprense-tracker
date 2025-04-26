@@ -1,4 +1,4 @@
-# Expense Tracker Application
+# **Expense Tracker Application**
 
 Welcome to my **Expense Tracker** project — a full-stack application built with **MERN stack** (MongoDB, Express.js, React, Node.js) and **Tailwind CSS**.
 
@@ -51,34 +51,25 @@ This project allows users to **track their income and expenses**, **visualize fi
 ### Dashboard View
 
 ![Dashboard](./readme/1.png)
-
-### Financial Overview
-
 ![Financial Overview](./readme/2.png)
-
-### Expenses Overview
-
 ![Expenses Page](./readme/3.png)
 
-### Incomes Overview
-
-![Incomes Page](./readme/7.png)
-
-### Download Income Excel
-
-![Download Income](./readme/8.png)
-
-### Download Expense Excel
-
-![Download Expense](./readme/6.png)
-
 ### Expense Graph
+![Expense Graph](./readme/4.png)
+![Expense2 Graph](./readme/14.png)
+![Expense3 Graph](./readme/15.png)
 
-![Expense Graph](./readme/5.png)
+#### You can download data in excel format as well
+![Expense4 Download Excel](./readme/6.png)
+![Expense4 Download Excel](./readme/7.png)
+![Expense4 Download Excel](./readme/8.png)
 
 ### Income Graph
-
-![Income Graph](./readme/4.png)
+![Income Graph](./readme/11.png)
+![Income2 Graph](./readme/13.png)
+![Income3 Graph](./readme/16.png)
+![Download Excel Income](./readme/9.png)
+![Download Excel Income](./readme/10.png)
 
 ---
 
