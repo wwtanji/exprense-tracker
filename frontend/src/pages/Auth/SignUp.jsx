@@ -9,7 +9,6 @@ import { UserContext } from "../../context/UserContext";
 import axiosInstance from "../../utils/axiosInstance";
 import AuthLayout from "../../components/layouts/AuthLayout";
 
-
 const SignUpForm = () => {
   const [profilePic, setProfilePic] = useState(null);
   const [fullName, setFullName] = useState("");
@@ -76,8 +75,8 @@ const SignUpForm = () => {
   return (
     <AuthLayout>
       <div className="lg:w-[100%] h-auto md:h-full mt-10 md:mt-0 flex flex-col justify-center">
-        <h3 className="text-xl font-semibold text-black">Create an Account</h3>
-        <p className="text-xs text-slate-700 mt-[5px] mb-6">
+        <h3 className="text-xl font-semibold text-black text-center">Create an Account</h3>
+        <p className="text-xs text-slate-700 mt-[5px] mb-6 text-center">
           Join us today by entering your details below.
         </p>
 
@@ -112,14 +111,14 @@ const SignUpForm = () => {
             </div>
           </div>
 
-          {error && <p className="text-red-500 text-xs pb-2.5">{error}</p>}
+          {error && <p className="text-red-500 text-xs pb-2.5 text-center">{error}</p>}
 
           <button type="submit" className="btn-primary">
             SIGN UP
           </button>
 
-          <p className="text-[13px] text-slate-800 mt-3">
-            Already have an account?{" "}
+          <p className="text-[13px] text-slate-800 mt-3 text-center">
+            Already have an account?{' '}
             <Link className="font-medium text-primary underline" to="/login">
               Login
             </Link>

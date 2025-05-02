@@ -1,127 +1,51 @@
-# **Expense Tracker Application**
+# Expense Tracker Application
 
-Welcome to my **Expense Tracker** project — a full-stack application built with **MERN stack** (MongoDB, Express.js, React, Node.js) and **Tailwind CSS**.
+> **Status:** Work in Progress
 
-This project allows users to **track their income and expenses**, **visualize financial data** through graphs, and **download reports in Excel format**.
-
----
-
-## Features
-
-- User Authentication (Sign Up / Log In)
-- Add and manage Income & Expense records
-- **Dynamic Graphs**: Pie Chart, Bar Chart, Line Chart
-- **Excel Download** for both Income and Expense data
-- Financial Overview Dashboard
-- Profile Picture Upload
-- Responsive and Modern UI with Tailwind CSS
+Welcome to the **Expense Tracker** project—a MERN-stack application to help users track incomes and expenses, visualize data, and export reports. This repository is actively under development; features and UI are still evolving.
 
 ---
 
-## Special Highlights
+## Technologies
 
-- **Excel File Export**:
-  - Users can download all their incomes and expenses as `.xlsx` files with one click.
-  - Makes tracking and sharing financial records very convenient.
-
-- **Financial Data Visualization**:
-  - Beautiful interactive charts help users understand their income/expense trends clearly.
-  - Uses Pie, Line, and Bar charts for different sections.
-
-- **Modern UI**:
-  - Fully responsive, mobile-friendly design.
-  - Built with Tailwind CSS to maintain consistent styles easily.
+- **MERN Stack**: MongoDB, Express.js, React.js, Node.js
+- **Styling**: Tailwind CSS
+- **Charts**: Recharts (integration upcoming)
+- **Excel Handling**: SheetJS (xlsx) (to be added)
+- **Auth**: JWT (routes set up, frontend TBD)
 
 ---
 
-## Technology Stack
+## Setup (for Development)
 
-- **MERN Stack**: [Learn about MERN](https://www.mongodb.com/mern-stack)
-- **Frontend**: [React.js](https://react.dev/) + [Tailwind CSS](https://tailwindcss.com/)
-- **Backend**: [Node.js](https://nodejs.org/) + [Express.js](https://expressjs.com/)
-- **Database**: [MongoDB Atlas](https://www.mongodb.com/atlas/database)
-- **Authentication**: [JWT (JSON Web Tokens)](https://jwt.io/)
-- **Charts**: [Recharts](https://recharts.org/en-US/)
-- **Excel Handling**: [SheetJS (xlsx)](https://sheetjs.com/)
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/wwtanji/expense-tracker.git
+   cd expense-tracker
+   ```
 
----
+2. **Backend**
+   ```bash
+   cd backend
+   npm install
+   # configure `.env`:
+   # MONGO_URI=your_mongodb_connection_string
+   # JWT_SECRET=your_jwt_secret
+   # PORT=5000
+   npm run dev
+   ```
 
-## Screenshots
-
-### Dashboard View
-
-![Dashboard](./readme/1.png)
-![Financial Overview](./readme/2.png)
-![Expenses Page](./readme/3.png)
-
-### Expense Graph
-![Expense Graph](./readme/4.png)
-![Expense2 Graph](./readme/14.png)
-![Expense3 Graph](./readme/15.png)
-
-#### You can download data in excel format as well
-![Expense4 Download Excel](./readme/6.png)
-![Expense4 Download Excel](./readme/7.png)
-![Expense4 Download Excel](./readme/8.png)
-
-### Income Graph
-![Income Graph](./readme/11.png)
-![Income2 Graph](./readme/13.png)
-![Income3 Graph](./readme/16.png)
-![Download Excel Income](./readme/9.png)
-![Download Excel Income](./readme/10.png)
+3. **Frontend**
+   ```bash
+   cd ../frontend
+   npm install
+   npm run dev
+   ```
 
 ---
 
-## How to Run Locally
+## 🙋‍♂️ Author
 
-1. **Clone the repository**
+**Roman Zotsenko**
 
-```bash
-git clone https://github.com/wwtanji/expense-tracker.git
-cd expense-tracker
-```
-
-2. **Install backend dependencies**
-
-```bash
-cd backend
-npm install
-```
-
-3. **Install frontend dependencies**
-
-```bash
-cd ../frontend
-npm install
-```
-
-4. **Configure environment variables**
-
-Create a `.env` file inside the `backend/` directory:
-
-```env
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-PORT=your_port
-```
-
-5. **Run the backend**
-
-```bash
-cd backend
-npm start
-```
-
-6. **Run the frontend**
-
-```bash
-cd frontend
-npm run dev
-```
-
-The frontend will be available at [http://localhost:5173](http://localhost:5173) and backend at [http://localhost:5000](http://localhost:5000).
-
----
-
-# Author: Roman Zotsenko
+*Feel free to open issues and submit PRs. This project is in active alpha; contributions and feedback are welcome!*  
