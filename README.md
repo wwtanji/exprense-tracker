@@ -2,7 +2,7 @@
 
 > **Status:** Work in Progress
 
-Welcome to the **Expense Tracker** project—a MERN-stack application to help users track incomes and expenses, visualize data, and export reports. This repository is actively under development; features and UI are still evolving.
+Welcome to the **Expense Tracker** project, a MERN-stack application to help users track incomes and expenses, visualize data, and export reports. This repository is actively under development; features and UI are still evolving.
 
 ---
 
@@ -44,8 +44,8 @@ Welcome to the **Expense Tracker** project—a MERN-stack application to help us
 
 ---
 
-## 🙋‍♂️ Author
+## Author
 
 **Roman Zotsenko**
 
-*Feel free to open issues and submit PRs. This project is in active alpha; contributions and feedback are welcome!*  
+**I’m open to feedback and suggestions since this is my first experience with Node.js, Express, and React. Let’s make this project even better together!**
